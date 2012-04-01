@@ -95,7 +95,7 @@ void rfbSendClientList() {
     pthread_mutex_lock(&rfbClientListMutex);
 
 	NSAutoreleasePool *pool=[[NSAutoreleasePool alloc] init];
-	NSMutableArray *clientList = [[NSMutableArray alloc] init];
+	NSMutableArray *clientList = [NSMutableArray array];
 	rfbClientPtr myClient = rfbClientHead;
 	
 	while (myClient != NULL) {

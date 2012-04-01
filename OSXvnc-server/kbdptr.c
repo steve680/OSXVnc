@@ -27,6 +27,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Carbon/Carbon.h>
+#import "TigerExtensions.h"
 
 #include <stdio.h>
 #include <ApplicationServices/ApplicationServices.h>

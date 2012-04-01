@@ -11,7 +11,7 @@
 #import <Carbon/Carbon.h>
 
 #import "RFBBundleProtocol.h"
-
+#import "JaguarExtensions.h"
 #import "rfb.h"
 
 

@@ -311,10 +311,10 @@ static BOOL debugPB = NO;
 // or possibly run with -inetd...hmmm...
 
 // This is the global VNC change count
-NSLock *pasteboardLock = nil;
+NSRecursiveLock *pasteboardLock = nil;
 
 // Used to lock access to pasteboardString, clientCutText and pasteboards array
-NSLock *pasteboardVariablesLock = nil;
+NSRecursiveLock *pasteboardVariablesLock = nil;
 
 NSString *pasteboardString = nil;
 NSString *clientCutText = nil;

@@ -1252,7 +1252,7 @@ NSMutableArray *localIPAddresses() {
 
 	// VNC Password
 	if (newAuth == 1) {
-		[[NSUserDefaults standardUserDefaults] setObject:[NSData dataWithBytes:(const void *)vncEncryptPasswd([passwordString cString]) length:8] forKey:@"vncauth"];
+		[[NSUserDefaults standardUserDefaults] setObject:[NSData dataWithBytes:(const void *)vncEncryptPasswd([passwordString UTF8String]) length:8] forKey:@"vncauth"];
 	}
 	// No Auth
 	else if (newAuth == 2) {
@@ -1343,7 +1343,7 @@ NSMutableArray *localIPAddresses() {
 	
     if ([passwordString length] && ![passwordString isEqualToString:PasswordProxy]) {
 		[authenticationType selectCellWithTag:1];
-		[[NSUserDefaults standardUserDefaults] setObject:[NSData dataWithBytes:(const void *)vncEncryptPasswd([passwordString cString]) length:8] forKey:@"vncauth"];
+		[[NSUserDefaults standardUserDefaults] setObject:[NSData dataWithBytes:(const void *)vncEncryptPasswd([passwordString UTF8String]) length:8] forKey:@"vncauth"];
 		
         if (sender != self) {
             [self saveUserDefaults: self];
@@ -1383,7 +1383,7 @@ NSMutableArray *localIPAddresses() {
 	int sysServerAuthType = [[systemServerAuthenticationType selectedCell] tag];
 	
 	if (sender == systemServerPasswordField && [passwordString length] && ![passwordString isEqualToString:PasswordProxy]) {
-		char *encPassword = vncEncryptPasswd([passwordString cString]);
+		char *encPassword = vncEncryptPasswd([passwordString UTF8String]);
 		
 		[systemServerAuthenticationType selectCellWithTag:1];
 		[[NSUserDefaults standardUserDefaults] setObject:[NSData dataWithBytes:(const void *)encPassword length:8] forKey:@"vncauthSystemServer"];		
@@ -1649,7 +1649,7 @@ NSMutableArray *localIPAddresses() {
 		[systemServerDisplayNameField setStringValue:oldDesktopName];
 		passwordFile = oldPasswordFile;
 	}
-    if ([startupScript writeToFile:@"/tmp/OSXvnc.script" atomically:YES]) {
+    if ([startupScript writeToFile:@"/tmp/OSXvnc.script" atomically:YES encoding:NSUTF8StringEncoding error:nil]) {
 		success &= [myAuthorization executeCommand:@"/bin/mv" 
 										  withArgs:[NSArray arrayWithObjects:@"-f", @"/tmp/OSXvnc.script", @"/Library/StartupItems/OSXvnc/OSXvnc", nil]];
         success &= [myAuthorization executeCommand:@"/usr/sbin/chown" 

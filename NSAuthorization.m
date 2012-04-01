@@ -50,12 +50,12 @@
         
     copyArguments = malloc(sizeof(char *) * ([argumentArray count]+1));
     for (i=0;i<[argumentArray count];i++) {
-        copyArguments[i] = (char *) [[argumentArray objectAtIndex:i] lossyCString];
+        copyArguments[i] = (char *) [[argumentArray objectAtIndex:i] UTF8String];
     }
     copyArguments[i] = NULL;
     
     myStatus = AuthorizationExecuteWithPrivileges(myAuthorizationRef, 
-                                                  [command lossyCString], 
+                                                  [command UTF8String],
                                                   kAuthorizationFlagDefaults,
                                                   copyArguments, 
                                                   (sync ? &communicationStream : NULL)); // FILE HANDLE for I/O

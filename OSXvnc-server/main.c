@@ -138,7 +138,7 @@ static bool rfbScreenInit(void);
 void rfbLog(char *format, ...) {
 	if (logEnable && format != NULL) {
 		va_list args;
-		NSString *nsFormat = [[NSString alloc] initWithCString:format];	
+		NSString *nsFormat = [[NSString alloc] initWithUTF8String:format];
 		pthread_mutex_lock(&logMutex);
 		NS_DURING {
 			va_start(args, format);
@@ -155,7 +155,7 @@ void rfbLog(char *format, ...) {
 void rfbDebugLog(char *format, ...) {
 #ifdef __DEBUGGING__
     va_list args;
-    NSString *nsFormat = [[NSString alloc] initWithCString:format];
+    NSString *nsFormat = [[NSString alloc] initWithUTF8String:format];
 	
     pthread_mutex_lock(&logMutex);
     va_start(args, format);

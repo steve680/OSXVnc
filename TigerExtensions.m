@@ -489,7 +489,7 @@ bool isConsoleSession() {
 	[[self class] handleKeyboard:down forSym: keySym forClient: cl];
 }
 
-inline void setKeyModifiers(CGEventFlags modifierFlags) {
+ void setKeyModifiers(CGEventFlags modifierFlags) {
 	// If it's a session tap (and we have an event source) then we can specify our own modifiers as part of the event (nothing to do here)
 	// Otherwise we will have to explicitly twiddle them at the HID level based on their current state
 	if (vncTapLocation == kCGHIDEventTap || !vncSourceRef) {
@@ -515,7 +515,7 @@ inline void setKeyModifiers(CGEventFlags modifierFlags) {
 	currentModifiers = modifierFlags;
 }
 
-inline void sendKeyEvent(CGKeyCode keyCode, Bool down, CGEventFlags localModifierFlags) {
+ void sendKeyEvent(CGKeyCode keyCode, Bool down, CGEventFlags localModifierFlags) {
 	if (!vncSourceRef) {
 		CGPostKeyboardEvent(0, keyCode, down);
 	}

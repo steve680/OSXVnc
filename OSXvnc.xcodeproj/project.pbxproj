@@ -25,10 +25,6 @@
 		AB25D82E08686B520065843D /* NSAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD8EC08058A0BD600C84739 /* NSAuthorization.m */; };
 		AB25D83008686B520065843D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		AB25D83108686B520065843D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEE28F804C8745B00A80117 /* Security.framework */; };
-		AB25D87808686C7D0065843D /* JaguarExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3598EA04BF8A6500A80117 /* JaguarExtensions.m */; };
-		AB25D87A08686C7D0065843D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		AB25D87B08686C7D0065843D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF191B704E447A400A80117 /* Carbon.framework */; };
-		AB25D87C08686C7D0065843D /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB41881F04C5986E00A80117 /* ApplicationServices.framework */; };
 		AB25D895086870420065843D /* auth.c in Sources */ = {isa = PBXBuildFile; fileRef = F538E01002F9812901A80186 /* auth.c */; };
 		AB25D896086870430065843D /* corre.c in Sources */ = {isa = PBXBuildFile; fileRef = F538E01302F9812901A80186 /* corre.c */; };
 		AB25D897086870430065843D /* cutpaste.c in Sources */ = {isa = PBXBuildFile; fileRef = F538E01402F9812901A80186 /* cutpaste.c */; };
@@ -118,8 +114,6 @@
 		ABA7B6A0094A163D00CD7499 /* jmemnobs.c in Sources */ = {isa = PBXBuildFile; fileRef = F538E08B02F9812A01A80186 /* jmemnobs.c */; };
 		ABA7B6D0094A170E00CD7499 /* vncauth.c in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B3D30948CB5D00CD7499 /* vncauth.c */; };
 		ABA7B6D6094A171A00CD7499 /* d3des.c in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B3D10948CB5D00CD7499 /* d3des.c */; };
-		ABD29D3F0D80B569005BFA6B /* VNCBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = ABD29D3D0D80B569005BFA6B /* VNCBundle.h */; };
-		ABD29D400D80B569005BFA6B /* VNCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD29D3E0D80B569005BFA6B /* VNCBundle.m */; };
 		ABD29D410D80B569005BFA6B /* VNCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD29D3E0D80B569005BFA6B /* VNCBundle.m */; };
 		ABFC222C0AF08CBA00BCE727 /* VineServer.icns in Resources */ = {isa = PBXBuildFile; fileRef = ABFC222B0AF08CBA00BCE727 /* VineServer.icns */; };
 		CA00814E121CA18D008B29B7 /* FdInStream.h in Headers */ = {isa = PBXBuildFile; fileRef = F5C9B031038DA99401A80117 /* FdInStream.h */; };
@@ -202,14 +196,11 @@
 		AB15010D04F6A94500A80117 /* RFBBundleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFBBundleProtocol.h; sourceTree = "<group>"; };
 		AB25D83708686B520065843D /* VineServer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VineServer-Info.plist"; sourceTree = "<group>"; };
 		AB25D83808686B520065843D /* Vine Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vine Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB25D87D08686C7D0065843D /* JaguarBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JaguarBundle-Info.plist"; sourceTree = "<group>"; };
-		AB25D87E08686C7D0065843D /* JaguarBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JaguarBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB25DA3A0868842E0065843D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		AB25DA3C086884420065843D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
 		AB25DA93086897440065843D /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Japanese; path = Japanese.lproj/Copying.rtf; sourceTree = "<group>"; };
 		AB25DA9C0868987B0065843D /* French */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = French; path = French.lproj/Copying.rtf; sourceTree = "<group>"; };
 		AB3598E904BF8A6500A80117 /* JaguarExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JaguarExtensions.h; sourceTree = "<group>"; };
-		AB3598EA04BF8A6500A80117 /* JaguarExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JaguarExtensions.m; sourceTree = "<group>"; };
 		AB3E27F70AF947FB004AF567 /* Vine Server.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Vine Server.pdf"; sourceTree = "<group>"; };
 		AB41881F04C5986E00A80117 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		AB82605708689AC00010AB63 /* storepasswd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = storepasswd; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -496,16 +487,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB25D87908686C7D0065843D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB25D87A08686C7D0065843D /* Cocoa.framework in Frameworks */,
-				AB25D87B08686C7D0065843D /* Carbon.framework in Frameworks */,
-				AB25D87C08686C7D0065843D /* ApplicationServices.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AB25D88D08686FC40065843D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,7 +529,6 @@
 			isa = PBXGroup;
 			children = (
 				AB25D83808686B520065843D /* Vine Server.app */,
-				AB25D87E08686C7D0065843D /* JaguarBundle.bundle */,
 				AB0CBF9C0CCD1C0500C74547 /* TigerBundle.bundle */,
 				AB82605708689AC00010AB63 /* storepasswd */,
 				AB82605B08689AC00010AB63 /* OSXvnc-server */,
@@ -569,7 +549,6 @@
 				ABD29D3D0D80B569005BFA6B /* VNCBundle.h */,
 				ABD29D3E0D80B569005BFA6B /* VNCBundle.m */,
 				AB3598E904BF8A6500A80117 /* JaguarExtensions.h */,
-				AB3598EA04BF8A6500A80117 /* JaguarExtensions.m */,
 				AB0CBFA50CCD1C7900C74547 /* TigerExtensions.h */,
 				AB0CBFA60CCD1C7900C74547 /* TigerExtensions.m */,
 				F538E00B02F9812901A80186 /* OSXvnc-server */,
@@ -578,7 +557,6 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				AB25D83708686B520065843D /* VineServer-Info.plist */,
-				AB25D87D08686C7D0065843D /* JaguarBundle-Info.plist */,
 				AB0CBF9D0CCD1C0500C74547 /* TigerBundle-Info.plist */,
 			);
 			name = OSXvnc;
@@ -911,14 +889,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		AB25D87208686C7D0065843D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABD29D3F0D80B569005BFA6B /* VNCBundle.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		ABA7B529094A053000CD7499 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -988,24 +958,6 @@
 			productName = OSXvnc;
 			productReference = AB25D83808686B520065843D /* Vine Server.app */;
 			productType = "com.apple.product-type.application";
-		};
-		AB25D87108686C7D0065843D /* JaguarBundle */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ABECD3E608E46414009C84A0 /* Build configuration list for PBXNativeTarget "JaguarBundle" */;
-			buildPhases = (
-				AB25D87208686C7D0065843D /* Headers */,
-				AB25D87708686C7D0065843D /* Sources */,
-				AB25D87908686C7D0065843D /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = JaguarBundle;
-			productInstallPath = "$(USER_LIBRARY_DIR)/Bundles";
-			productName = JaguarBundle;
-			productReference = AB25D87E08686C7D0065843D /* JaguarBundle.bundle */;
-			productType = "com.apple.product-type.bundle";
 		};
 		AB25D88E08686FC40065843D /* OSXvnc-server */ = {
 			isa = PBXNativeTarget;
@@ -1101,7 +1053,6 @@
 			projectRoot = "";
 			targets = (
 				AB25D81508686B520065843D /* Vine Server */,
-				AB25D87108686C7D0065843D /* JaguarBundle */,
 				AB0CBF9B0CCD1C0500C74547 /* TigerBundle */,
 				AB25D88E08686FC40065843D /* OSXvnc-server */,
 				AB25D98F086876B80065843D /* storepasswd */,
@@ -1197,15 +1148,6 @@
 				AB25D82E08686B520065843D /* NSAuthorization.m in Sources */,
 				ABA7B6D0094A170E00CD7499 /* vncauth.c in Sources */,
 				ABA7B6D6094A171A00CD7499 /* d3des.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB25D87708686C7D0065843D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB25D87808686C7D0065843D /* JaguarExtensions.m in Sources */,
-				ABD29D400D80B569005BFA6B /* VNCBundle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1523,58 +1465,6 @@
 			};
 			name = Deployment;
 		};
-		ABECD3E708E46414009C84A0 /* Development */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"OSXvnc-server",
-					"OSXvnc-server/include",
-					include/Xserver,
-					libjpeg,
-				);
-				INFOPLIST_FILE = "JaguarBundle-Info.plist";
-				INSTALL_MODE_FLAG = "a+rwX";
-				LIBRARY_SEARCH_PATHS = /usr/lib/gcc/darwin/3.3;
-				MACOSX_DEPLOYMENT_TARGET = 10.2;
-				PRODUCT_NAME = JaguarBundle;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = NO;
-			};
-			name = Development;
-		};
-		ABECD3E808E46414009C84A0 /* Deployment */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"OSXvnc-server",
-					"OSXvnc-server/include",
-					include/Xserver,
-					libjpeg,
-				);
-				INFOPLIST_FILE = "JaguarBundle-Info.plist";
-				LIBRARY_SEARCH_PATHS = /usr/lib/gcc/darwin/3.3;
-				MACOSX_DEPLOYMENT_TARGET = 10.2;
-				PRODUCT_NAME = JaguarBundle;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
 		ABECD3EB08E46414009C84A0 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1668,15 +1558,6 @@
 			buildConfigurations = (
 				ABECD3E308E46414009C84A0 /* Development */,
 				ABECD3E408E46414009C84A0 /* Deployment */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
-		};
-		ABECD3E608E46414009C84A0 /* Build configuration list for PBXNativeTarget "JaguarBundle" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ABECD3E708E46414009C84A0 /* Development */,
-				ABECD3E808E46414009C84A0 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Development;

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1083,9 +1083,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = NO;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = ABECD3EE08E46414009C84A0 /* Build configuration list for PBXProject "OSXvnc" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -1398,10 +1399,6 @@
 		AB0CBF9F0CCD1C0600C74547 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				HEADER_SEARCH_PATHS = (
 					"OSXvnc-server",
@@ -1410,17 +1407,13 @@
 					libjpeg,
 				);
 				INFOPLIST_FILE = "TigerBundle-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = TigerBundle;
-				WRAPPER_EXTENSION = bundle;
-				ZERO_LINK = NO;
 			};
 			name = Development;
 		};
@@ -1428,7 +1421,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_VERSION_ppc = "";
 				HEADER_SEARCH_PATHS = (
 					"OSXvnc-server",
 					"OSXvnc-server/include",
@@ -1436,46 +1428,31 @@
 					libjpeg,
 				);
 				INFOPLIST_FILE = "TigerBundle-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = TigerBundle;
-				SDKROOT_i386 = "";
-				SDKROOT_ppc = "";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Deployment;
 		};
 		ABA7B538094A054A00CD7499 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "osxvnc-server";
-				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = rdr;
-				ZERO_LINK = YES;
 			};
 			name = Development;
 		};
 		ABA7B539094A054A00CD7499 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CXX = "g++-3.3 ";
-				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
 				HEADER_SEARCH_PATHS = "osxvnc-server";
-				PREBINDING = NO;
 				PRODUCT_NAME = rdr;
 				SEPARATE_STRIP = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -1485,12 +1462,7 @@
 		ABA7B638094A0A6E00CD7499 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PREBINDING = NO;
 				PRODUCT_NAME = jpg;
-				ZERO_LINK = YES;
 			};
 			name = Development;
 		};
@@ -1504,11 +1476,7 @@
 		ABECD3DF08E46414009C84A0 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INPUT_FILETYPE = automatic;
 				HEADER_SEARCH_PATHS = (
 					"OSXvnc-server",
 					"OSXvnc-server/include",
@@ -1516,24 +1484,19 @@
 					libvncauth,
 					libjpeg,
 				);
-				INSTALL_MODE_FLAG = "a+rwX";
-				OTHER_CFLAGS = "-ObjC";
 				PRODUCT_NAME = "OSXvnc-server";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
 				);
-				ZERO_LINK = NO;
 			};
 			name = Development;
 		};
 		ABECD3E008E46414009C84A0 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_POSTPROCESSING = NO;
-				GCC_INPUT_FILETYPE = automatic;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				HEADER_SEARCH_PATHS = (
 					"OSXvnc-server",
@@ -1541,8 +1504,6 @@
 					libjpeg,
 				);
 				MACH_O_TYPE = mh_execute;
-				OTHER_CFLAGS = "-ObjC";
-				PREBINDING = NO;
 				PRODUCT_NAME = "OSXvnc-server";
 				STRIP_INSTALLED_PRODUCT = NO;
 			};
@@ -1551,7 +1512,6 @@
 		ABECD3E308E46414009C84A0 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = storepasswd;
 			};
 			name = Development;
@@ -1559,7 +1519,6 @@
 		ABECD3E408E46414009C84A0 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PREBINDING = NO;
 				PRODUCT_NAME = storepasswd;
 			};
 			name = Deployment;
@@ -1567,9 +1526,9 @@
 		ABECD3E708E46414009C84A0 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"OSXvnc-server",
 					"OSXvnc-server/include",
@@ -1594,8 +1553,8 @@
 		ABECD3E808E46414009C84A0 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"OSXvnc-server",
 					"OSXvnc-server/include",
@@ -1620,14 +1579,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1060;
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				CURRENT_PROJECT_VERSION = 1061;
 				INFOPLIST_FILE = "VineServer-Info.plist";
-				INSTALL_MODE_FLAG = "a+rwX";
-				INSTALL_PATH = "/Vine Server/";
 				PRODUCT_NAME = "Vine Server";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -1635,23 +1588,15 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
 			};
 			name = Development;
 		};
 		ABECD3EC08E46414009C84A0 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
-				DSTROOT = /tmp;
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = "VineServer-Info.plist";
-				INSTALL_MODE_FLAG = 755;
-				INSTALL_PATH = "/Vine Server/";
 				PRODUCT_NAME = "Vine Server";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -1659,33 +1604,23 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
 			};
 			name = Deployment;
 		};
 		ABECD3EF08E46414009C84A0 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = 4.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				GCC_OPTIMIZATION_LEVEL = 1;
 				REMOVE_CVS_FROM_RESOURCES = YES;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Development;
 		};
 		ABECD3F008E46414009C84A0 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_VERSION = 4.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				REMOVE_CVS_FROM_RESOURCES = YES;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
-				STRIP_INSTALLED_PRODUCT = YES;
 			};
 			name = Deployment;
 		};

@@ -169,7 +169,7 @@ bool isConsoleSession() {
 			while (!readyToStartup) {
 				OSStatus resultCode = RunCurrentEventLoop(kEventDurationSecond); //EventTimeout
 				if (resultCode != eventLoopTimedOutErr) {
-					NSLog(@"Received Result: %d during event loop, Shutting Down", resultCode);
+					NSLog(@"Received Result: %ld during event loop, Shutting Down", resultCode);
 					//rfbShutdown();
 					exit(0);
 				}
@@ -278,12 +278,12 @@ bool isConsoleSession() {
 				usleep(pollInterval);
 				timeout -= pollInterval;
 			}
-			NSLog(@"Current Script/Previous: %d/%d", GetScriptManagerVariable(smKeyScript), GetScriptManagerVariable(smLastScript));
+			NSLog(@"Current Script/Previous: %ld/%ld", GetScriptManagerVariable(smKeyScript), GetScriptManagerVariable(smLastScript));
 		}
 		OSStatus result = KLGetKeyboardLayoutWithIdentifier([[NSUserDefaults standardUserDefaults] integerForKey:@"UnicodeKeyboardIdentifier"], &unicodeLayout);
 		if (floor(NSAppKitVersionNumber) <= floor(NSAppKitVersionNumber10_4)) {
 			KeyScript( GetScriptManagerVariable(smLastScript) | smKeyForceKeyScriptMask );
-			NSLog(@"Current Script/Previous: %d/%d", GetScriptManagerVariable(smKeyScript), GetScriptManagerVariable(smLastScript));
+			NSLog(@"Current Script/Previous: %ld/%ld", GetScriptManagerVariable(smKeyScript), GetScriptManagerVariable(smLastScript));
 		}
 		// Unicode Keyboard Should load keys from definition
 		(*(theServer->pressModsForKeys) = YES);
@@ -381,7 +381,7 @@ bool isConsoleSession() {
 				KLGetCurrentKeyboardLayout(&currentKeyboardLayout);
 				SyncSetKeyboardLayout(smUnicodeScript,unicodeLayout);
 				oldKeyboardScript = GetScriptManagerVariable(smLastScript);
-				NSLog(@"Setting OldKeyboard: %d", GetScriptManagerVariable(smLastScript));
+				NSLog(@"Setting OldKeyboard: %ld", GetScriptManagerVariable(smLastScript));
 			}
 			
 			modifiersToSend = kCGEventFlagMaskAlternate | kCGEventFlagMaskNonCoalesced;
@@ -550,7 +550,7 @@ void SyncSetKeyboardLayout (unsigned long keyboardScript, KeyboardLayoutRef newL
 	KeyScript( keyboardScript | smKeyForceKeyScriptMask );
 	// Async -- wait for it to change
 	while (timeout > 0 && GetScriptManagerVariable(smKeyScript) != keyboardScript) {
-		NSLog(@"Waiting for Script to Change From:%d To:%d", GetScriptManagerVariable(smKeyScript), keyboardScript);
+		NSLog(@"Waiting for Script to Change From:%ld To:%lu", GetScriptManagerVariable(smKeyScript), keyboardScript);
 		usleep(pollInterval);
 		timeout -= pollInterval;
 	}
@@ -559,11 +559,11 @@ void SyncSetKeyboardLayout (unsigned long keyboardScript, KeyboardLayoutRef newL
 	// Try setting it
 	// Get the target identifier
 	KLGetKeyboardLayoutProperty(newLayout, kKLIdentifier, (const void **)&targetIdentifier);
-	NSLog(@"Current Script(Keyboard)/Previous: %d(%d)/%d", GetScriptManagerVariable(smKeyScript), targetIdentifier, GetScriptManagerVariable(smLastScript));
+	NSLog(@"Current Script(Keyboard)/Previous: %ld(%d)/%ld", GetScriptManagerVariable(smKeyScript), targetIdentifier, GetScriptManagerVariable(smLastScript));
 			 
 	result = KLSetCurrentKeyboardLayout(newLayout);
 	if (result != noErr) {
-		NSLog(@"Error Setting Keyboard Layout: %d Result: %d", targetIdentifier, result);
+		NSLog(@"Error Setting Keyboard Layout: %d Result: %ld", targetIdentifier, result);
 		return;
 	}
 	// Async -- wait for it to change
@@ -572,7 +572,7 @@ void SyncSetKeyboardLayout (unsigned long keyboardScript, KeyboardLayoutRef newL
 		KLGetKeyboardLayoutProperty(aKeyboardLayout, kKLIdentifier, (const void **)&identifier);
 		if (identifier == targetIdentifier)
 			break;
-		NSLog(@"Waiting for Keyboard Layout to Change From:%d To:%d Result:%d", identifier, targetIdentifier, result);
+		NSLog(@"Waiting for Keyboard Layout to Change From:%d To:%d Result:%ld", identifier, targetIdentifier, result);
 		usleep(pollInterval);
 		timeout -= pollInterval;
 	}

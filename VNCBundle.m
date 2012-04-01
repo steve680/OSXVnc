@@ -60,7 +60,7 @@
     if (keyboardLayoutRef) {
         KLGetKeyboardLayoutProperty(keyboardLayoutRef, kKLName, (const void **) &keyboardName);
         KLGetKeyboardLayoutProperty(keyboardLayoutRef, kKLKind, (const void **) &layoutKind);
-        NSLog(@"Keyboard Detected: %@ (Type:%d) - Loading Keys\n", keyboardName, layoutKind);
+        NSLog(@"Keyboard Detected: %@ (Type:%ld) - Loading Keys\n", keyboardName, layoutKind);
         if (layoutKind == kKLKCHRuchrKind || layoutKind == kKLuchrKind)
             KLGetKeyboardLayoutProperty(keyboardLayoutRef, kKLuchrData, (const void **) &uchrHandle);
         else
@@ -104,7 +104,7 @@
 					
 					if (resultCode == noErr) {
 						if (actualStringLength > 1) {
-							NSLog(@"Multiple Characters For %d (%#04x): %S",  keyCode, modifierKeyState, unicodeChar);
+							NSLog(@"Multiple Characters For %d (%04lx): %S",  keyCode, modifierKeyState, (int*)unicodeChar);
 							//unicodeChar[0] = unicodeChar[actualStringLength-1];
 						}
 						else {
@@ -116,7 +116,7 @@
 						}
 					}
 					else {
-						NSLog(@"Error Translating %d (%#04x): %d",  keyCode, modifierKeyState, resultCode);
+						NSLog(@"Error Translating %d (%04lx): %ld",  keyCode, modifierKeyState, resultCode);
 					}
 				}
 			}
@@ -140,7 +140,7 @@
                 kchrCharacters = KeyTranslate(kchrHandle, (modifierKeyState<<8 | keyCode), &state);
 				
                 if (kchrCharacters & 0xFFFF0000) {
-                    NSLog(@"Unable To Convert KeyCode, Multiple Characters (%#04x) (%#04x) For: %d (%#04x)",
+                    NSLog(@"Unable To Convert KeyCode, Multiple Characters (%04lx) (%04lx) For: %d (%04lx)",
                           kchrCharacters>>16 & 0xFFFF, kchrCharacters & 0xFFFF, keyCode, modifierKeyState);
                 }
                 else {
@@ -164,7 +164,7 @@
 	
     // This is the old SpecialKeyCodes keyboard mapping
     // Map the above key table into a static array so we can just look them up directly
-    NSLog(@"Loading %d XKeysym Special Keys\n", (sizeof(SpecialKeyCodes) / sizeof(int))/2);
+    NSLog(@"Loading %lu XKeysym Special Keys\n", (sizeof(SpecialKeyCodes) / sizeof(int))/2);
     for (i = 0; i < (sizeof(SpecialKeyCodes) / sizeof(int)); i += 2) {
         theServer->keyTable[(unsigned short)SpecialKeyCodes[i]] = (CGKeyCode) SpecialKeyCodes[i+1];
 	}

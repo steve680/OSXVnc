@@ -270,7 +270,7 @@ static BOOL debugPB = NO;
 	}
 	else { // Error occured
 		NSString *errorString = [[NSString alloc] initWithData:clientPointer->richClipboardReceivedNSData encoding:NSUTF8StringEncoding];
-		NSLog(errorString);
+		NSLog(@"%@", errorString);
 		[errorString release];
 	};
 	
